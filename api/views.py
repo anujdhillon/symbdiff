@@ -14,6 +14,7 @@ def apiOverview(request):
 		'List':'/comment-list/',
 		'Detail View':'/comment-detail/<str:pk>/',
 		'Create':'/comment-create/',
+        'Differentiate': '/differentiate/'
 		}
 
 	return Response(api_urls)
@@ -42,14 +43,10 @@ def commentCreate(request):
 @api_view(["POST"])
 def differentiate(input):
     try:
-        getdata = json.loads(input.body)
-        fx = getdata
-        print(fx)
-        fx_obj = expr(fx['functiondata'])
+        fx_obj = expr(input.data['functiondata'])
         fprimex_obj = fx_obj.deriv('x')
         fprimex_str = fprimex_obj.prettyprint()
         fprimex = {'solution': fprimex_str}
-        print(fprimex)
         return JsonResponse(fprimex,safe=False)
     except ValueError as e:
         return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
