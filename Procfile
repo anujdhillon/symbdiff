@@ -1,0 +1,1 @@
+web: gunicorn symbdiff.wsgi --log-file -
