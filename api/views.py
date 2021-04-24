@@ -11,34 +11,10 @@ from .models import Comment
 @api_view(['GET'])
 def apiOverview(request):
 	api_urls = {
-		'List':'/comment-list/',
-		'Detail View':'/comment-detail/<str:pk>/',
-		'Create':'/comment-create/',
         'Differentiate': '/differentiate/'
 		}
 
 	return Response(api_urls)
-
-@api_view(['GET'])
-def commentList(request):
-	comments = Comment.objects.all().order_by('-id')
-	serializer = CommentSerializer(comments, many=True)
-	return Response(serializer.data)
-
-@api_view(['GET'])
-def commentDetail(request, pk):
-	comments = Comment.objects.get(id=pk)
-	serializer = CommentSerializer(comments, many=False)
-	return Response(serializer.data)
-
-
-@api_view(['POST'])
-def commentCreate(request):
-	serializer = CommentSerializer(data=request.data)
-	if serializer.is_valid():
-		serializer.save()
-	return Response(serializer.data)
-
 
 @api_view(["POST"])
 def differentiate(input):
