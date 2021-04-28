@@ -1,0 +1,38 @@
+.Navbar{
+    height: 70px;
+    top: 0;
+    background-color: #191D2B;
+    width: 100%;
+    margin-bottom: 2rem;
+    .nav{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .copyright{
+           margin: 0 1rem;
+        }
+        .nav-items{
+            margin-left: 3rem;
+            display: flex;
+            .nav-item{
+                margin-right: 1rem;
+                a{
+                    text-decoration: none;
+                    font-size: inherit;
+                    display: block; 
+                    padding: .5rem 0;
+                    position: relative;
+                    height: 100%;
+                    transition: all .4s ease-in-out;
+                }
+                a:hover{
+                    color: aliceblue;
+                }
+            }
+        }
+    }
+}
+.active{
+    color: aliceblue;
+}

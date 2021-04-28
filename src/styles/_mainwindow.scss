@@ -1,0 +1,92 @@
+.btn{
+    padding: 1rem 1rem;
+    background-color: #a4acc4;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.8s linear;
+}
+
+.other:hover{
+    background-color: rgba(255, 0, 0, 0.247);
+}
+.variable:hover{
+    background-color: rgba(0, 0, 255, 0.329);
+}
+.digit:hover{
+    background-color: rgba(0, 128, 0, 0.301);
+}
+.operator:hover{
+    background-color: rgba(255, 255, 0, 0.274);
+}
+.clear:hover{
+    background-color: red;
+}
+.diff:hover{
+    background-color: #037fff;
+}
+
+.MainWindow{
+    width: 40%;
+    margin-left:30%;
+    background-color: #191D2B;
+    border-radius: 3rem;
+    @media screen and (max-width: 1000px){
+        width: 90%;
+        margin: 0 5%;
+        margin-bottom: 5rem;
+    }
+    .content{
+        padding: 1rem 0;
+        margin: 0.5rem;
+        .instructions{
+            margin: 1rem;
+            text-align: center;
+            .examples{
+                margin-top: 1rem;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        .buttonarea{
+            width: 46%;
+            margin-left: 27%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin-top: 2rem;
+        }
+        .submitarea{
+            width: 52%;
+            margin-left: 24%;
+            margin-top: 2rem;
+            .inputtext{
+                textarea{
+                    max-width: 100%;
+                    width: 100%;
+                    max-height: 50px;
+                    resize: none;
+                }
+            }
+            .handlebuttons{
+                text-align: center;
+                .btn{
+                    margin: 0.5rem 2px 0 2px;
+                }
+            }
+            .outputtext{
+                margin-top: 1rem;
+                textarea{
+                    max-width: 100%;
+                    width: 100%;
+                    max-height: 50px;
+                }
+            }
+        
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import './styles/navbar';
+@import './styles/footer';
+@import './styles/mainwindow';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #a4acc4;
+  font-size: 1.2rem;
+}
+
+span{
+  color: #037fff;
+}
+.App{
+  height: 100vh;
+  background-color: #10121B;
+  background-image: url(dots.svg);
+  @media screen and (max-width: 1000px){
+    height: 130vh;
+  }
+  @media screen and (max-width: 1400px){
+    height: 140vh;
+  }
+}
